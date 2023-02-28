@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        currentDate = new SimpleDateFormat("M MMMM", new Locale("ru", "ru"));
+        currentDate = new SimpleDateFormat("dd MMMM", new Locale("ru", "ru"));
         result = currentDate.format(new Date());
 
         setNotes();
@@ -34,16 +34,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setNotes(){
-        notes.add(new Note("Заметка", result));
-        notes.add(new Note("Testing", result));
-        notes.add(new Note("Testing", result));
-        notes.add(new Note("Testing", result));
-        notes.add(new Note("Testing", result));
-        notes.add(new Note("Моя заметка", result));
-        notes.add(new Note("Test222ing", result));
-        notes.add(new Note("Test321ing", result));
-        notes.add(new Note("3213", result));
-        notes.add(new Note("Моя заметка", result));
-        notes.add(new Note("Test222ing", result));
+        notes.add(new Note("1","Заметка", result));
+
     }
 }
