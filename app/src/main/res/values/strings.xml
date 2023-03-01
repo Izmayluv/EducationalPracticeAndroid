@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Educational Practice</string>
+    <string name="i_am_programmer">Дорогой дневник, мне не подобрать слов чтобы описать боль и унижение которые я испытал сегодня, моя жизнь поломана навсегда... я программист...</string>
+    <string name="note_name">Название заметки</string>
+    <string name="todo">TODO</string>
 </resources>

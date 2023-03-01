@@ -13,10 +13,10 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="32">
         <activity
-            android:name=".NoteEditActivity"
+            android:name=".activity_classes.NoteEditActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity_classes.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +28,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
     </application>
 
 </manifest>

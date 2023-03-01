@@ -1,4 +1,4 @@
-package com.example.educationalpractice;
+package com.example.educationalpractice.classes;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,34 +6,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.educationalpractice.R;
+import com.example.educationalpractice.activity_classes.NoteEditActivity;
+
 import java.util.List;
 
-public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
+public class NoteRecycleViewAdapter extends RecyclerView.Adapter<NoteRecycleViewAdapter.ViewHolder> {
 
     private final LayoutInflater inflater;
     private final List<Note> notes;
-    private Context context;
 
-    NoteAdapter(Context context, List<Note> notes){
+    public NoteRecycleViewAdapter(Context context, List<Note> notes){
         this.notes = notes;
         this.inflater = LayoutInflater.from(context);
-        this.context = context;
     }
 
     @NonNull
     @Override
-    public NoteAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NoteRecycleViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
       View view = inflater.inflate(R.layout.note_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(NoteAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(NoteRecycleViewAdapter.ViewHolder holder, int position) {
         Note note = notes.get(position);
         holder.textViewNoteName.setText(note.getNoteName());
         holder.textViewNoteDate.setText(note.getNoteDate());
@@ -46,7 +46,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     public static class ViewHolder  extends  RecyclerView.ViewHolder{
 
-        final TextView textViewNoteName, textViewNoteDate;
+        private final TextView textViewNoteName, textViewNoteDate;
 
         public ViewHolder(@NonNull View view) {
             super(view);
@@ -57,7 +57,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int positionId = getAdapterPosition();
+                    long positionId = getAdapterPosition();
 
                     Intent i = new Intent(v.getContext(), NoteEditActivity.class);
                     i.putExtra("ViewHolderID", positionId);
